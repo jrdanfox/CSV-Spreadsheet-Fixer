@@ -24,6 +24,7 @@ def add_address_2(filename):
 	readfile = open(filename)
 	lines = readfile.read().splitlines()
 	writefile = open("fixed.csv", 'w')
+	
 	for someline in lines:
 		startline = someline[0:someline.index(",")]
 		line = someline[someline.index(","):len(someline)]
@@ -73,7 +74,6 @@ def remove_extra_lname_address(filename):
 	print(rows[0:10])
 	
 	
-
 # ------------------------------ execute script ------------------------------------#
 
 filename = sys.argv[1]
@@ -97,8 +97,3 @@ if "-r" in sys.argv:
 	remove_extra_lname_address(filename)
 	
 print("Done.")
-
-
-
-
-
