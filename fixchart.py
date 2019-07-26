@@ -12,28 +12,28 @@ def add_address_2(rows):
 	for row in rows:
 		address = row[1]
 
-		if("Apt" in address):
-			index = address.index("Apt")
+		if("Apt " in address):
+			index = address.index("Apt ")
 			row[1] = address[0:index]
 			row[2] = address[index:]
-		if("Unit" in address):
-			index = address.index("Unit")
+		if("Unit " in address):
+			index = address.index("Unit ")
 			row[1] = address[0:index]
 			row[2] = address[index:]
-		if("Ste" in address):
-			index = address.index("Ste")
+		if("Ste " in address):
+			index = address.index("Ste ")
 			row[1] = address[0:index]
 			row[2] = address[index:]
 		if("#" in address):
 			index = address.index("#")
 			row[1] = address[0:index]
 			row[2] = address[index:]
-		if("Fl" in address):
-			index = address.index("Fl")
+		if("Fl " in address):
+			index = address.index("Fl ")
 			row[1] = address[0:index]
 			row[2] = address[index:]
-		if("Ph" in address):
-			index = address.index("Ph")
+		if("Ph " in address):
+			index = address.index("Ph ")
 			row[1] = address[0:index]
 			row[2] = address[index:]
 
