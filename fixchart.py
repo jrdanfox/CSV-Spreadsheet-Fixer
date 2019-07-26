@@ -18,6 +18,10 @@ def fixline(line, string, startline, line_no):
 # TODO: only fix lines where address_2 string appears at the end of the address column
 # 		(fixes bug when adress_2 string appears in street name, etc.)
 def add_address_2(filename):
+	return 0
+
+
+	''' TODO: rework to use rows[][]
 	print("Fixing lines...")
 	line_no = 0
 
@@ -49,9 +53,21 @@ def add_address_2(filename):
 
 	readfile.close()
 	writefile.close()
+	'''
 	
 #-------------------------- duplicate lname + address stuff ------------------------#
 	
+def get_lname_address_tuples(lines):
+	return 0
+	
+
+def remove_extra_lname_address(filename):
+	return 0
+
+
+#-------------------------- helper functions ---------------------------------------#
+
+
 # takes an array of csv lines and parses it to a multidimensional array
 def parse_csv_lines(lines):
 	rows = []
@@ -60,19 +76,7 @@ def parse_csv_lines(lines):
 		rows.append(row)
 		
 	return rows
-	
-def get_lname_address_tuples(lines):
-	return 0
-	
 
-def remove_extra_lname_address(filename):
-	readfile = open(filename)
-	lines = readfile.read().splitlines()
-	
-	rows = parse_csv_lines(lines)
-	
-	print(rows[0:10])
-	
 	
 # ------------------------------ execute script ------------------------------------#
 
@@ -87,6 +91,11 @@ if (len(sys.argv) <= 2):
 	sys.exit(1)
 	
 print("Fixing file: " + filename)
+
+readfile = open(filename)
+lines = readfile.read().splitlines()
+rows = parse_csv_lines(lines)
+print(rows[0:10])
 
 if "-a" in sys.argv:
 	print("Operation: Add Address 2 column")
